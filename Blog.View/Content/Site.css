@@ -1,0 +1,264 @@
+﻿body {
+
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Blog styling*/
+h4 {
+    text-decoration: -moz-anchor-decoration #ff2828;
+}
+.blog-wrapper {
+    border: 1px solid;
+    padding: 10px 25px;
+}
+.category-title {
+    font-size: 24px;
+    padding-left: 10px;
+}
+.article-title {
+    font-size: 19px;
+    text-align: center;
+}
+.article-comment-wrapper {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-bottom: 1px solid #ff2828;
+    margin-left: 25px;
+    padding: 15px;
+}
+.comment-meta {
+    color: #999;
+    font-size: 11px;
+    padding: 0;
+}
+.commnet-text {
+    padding-left: 10px;
+}
+.cooment-author {
+    float: left;
+}
+.comment-timecreation {
+    float: right;
+}
+.add-article-btn-wrapper{
+    position:relative;
+}
+.add-article-btn-wrapper > a {
+    background: #ff2828;
+    border: 1px solid #ff2828;
+    border-radius: 50%;
+    box-shadow: 4px 5px 5px -4px rgba(0, 0, 0, 1);
+    color: #fff;
+    display: block;
+    font-size: 31px;
+    left: -15px;
+    padding: 2px 15px;
+    position: absolute;
+    text-align: center;
+    top: -61px;
+    vertical-align: middle;
+    z-index: 9999;
+    transition: all 0.14s ease 0s;
+}
+.add-article-btn-wrapper > a:hover {
+    background: #FFF ;
+    color: #FF2828;
+    text-decoration:none;
+    transition: all 0.14s ease 0s;
+}
+.aside-category-wrapper > a {
+    margin-right: 7px;
+}
+.a:hover{
+    color:#FF2828;
+    text-decoration:none;
+}
+.body-content {
+    padding: 15px 0;
+    min-height:800px;
+}
+.search-btn:hover{
+    background:#FF2828;
+    color:#fff;
+}
+.search-input {
+    float: left;
+    max-width: 300px;
+}
+.search-btn {
+    background: #222;
+    border: 0;
+    color: #999;
+    display: block;
+    height: 34px;
+    width: 70px;
+}
+.add-comment-btn {
+    background: #222;
+    border: 0;
+    color: #999;
+    display: block;
+    height: 34px;
+    width: 100%;
+    max-width:20%;
+    float:left;
+}
+.add-comment-btn:hover{
+    background:#FF2828;
+    color:#fff;
+}
+.article-name{
+    margin:0 0 3px 0;
+}
+.article-name a {
+    color: #060608;
+    font-size: 31px;
+    transition: all 0.14s ease 0s;
+}
+.article-name a:hover{
+    text-decoration:none;
+    color:#FF2828;
+    transition: all 0.14s ease 0s;
+}
+.navbar-nav > li > a{
+    height:50px;
+}
+.navbar-nav > li > a:hover{
+    border-bottom:3px solid;
+    border-bottom-color:#FF2828;
+    box-sizing:border-box;
+}
+.user-name {
+    color: #fff;
+    display: block;
+    padding: 15px 0;
+}
+.article-meta {
+    color: #999;
+}
+.posted-by {
+    float: right;
+}
+.article-wrapper {
+    border-bottom: 1px solid #999;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+.article-wrapper:last-child {
+    border-bottom: medium none;
+}
+.article-title-wrapper {
+    margin-bottom: 8px;
+}
+footer{
+    height:70px;
+    background:#222;
+    color:#fff;
+}
+.icons {
+    margin-bottom:5px;
+    width: 100%;
+}
+.article-icons {
+    background: #222222 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #999;
+    float: right;
+    margin-left: 10px;
+    padding: 8px;
+}
+.article-icons:hover {
+    background: #FF2828 ;
+    color: #fff;
+    text-decoration:none;
+}
+.meta-icon{
+    color:#FF2828;
+    margin-right:5px;
+}
+.article-meta a{
+    color:#999;
+    margin-right:5px;
+}
+.article-meta a:hover{
+    color:#999;
+    text-decoration-color:#FF2828;
+}
+.article-title {
+    margin-bottom: 30px;
+}
+.back-to-list a , .back-to-list span{
+    color:#FF2828;
+}
+.show-comment-wrapper a {
+    background: #222 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    margin:20px 0;
+}
+.show-comment-wrapper a:hover {
+    background: #FF2828;
+    text-decoration:none;
+}
+.commnet-input {
+    max-width: 80%;
+    float:left;
+}
+.aside-list {
+    background: #f6f6f6;
+    border: 1px solid #e6e6e6;
+    padding-left:0;
+    margin-bottom:15px;
+}
+.aside-list > li {
+    border-top: 1px solid #e7e7e7;
+    list-style:none;
+    line-height: 30px;
+    padding-left: 20px;
+}
+.aside-list > li:first-child{
+    border-top:none;
+}
+.aside-list > li a {
+    color: #222;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.aside-list > li a:hover{
+    text-decoration:none;
+    color:#FF2828;
+
+}
+.aside-title {
+    background: #222222 none repeat scroll 0 0;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    font-size: large;
+}
+.aside-tag-wrapper:hover .aside-title,.aside-category-wrapper:hover .aside-title {
+    background: #FF2828;
+    color: #FFF;
+}
