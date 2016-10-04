@@ -1,0 +1,61 @@
+﻿@model Blog.View.Models.ArticleModel
+
+
+    <div class="article-wrapper">
+        <div class="article-title">
+            <h1>@Model.Title</h1>
+
+        </div>
+        <div class="article-meta">
+            <span class="posted-on">Posted on @Model.ArticleCreationTime</span>
+            <span class="posted-by">Posted by @Model.UserName</span>
+        </div>
+        <div class="article-meta">
+            <span class="meta-icon glyphicon glyphicon-th-list"></span>
+            @Ajax.ActionLink(Model.CategoryName,
+                        "GetArticlesByCategory",
+                        new { id = Model.CategoryId },
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+        </div>
+        <div class="article-shordesc">@Model.ShortDescription</div>
+        <article class="article-text">@Model.ArticleText</article>
+        <div class="back-to-list">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        <div class="show-comment-wrapper">
+            @Ajax.ActionLink("Show Comments",
+                        "GetComments", "Home",
+                        new { id = Model.Id },
+                        new AjaxOptions { UpdateTargetId = "comments-wrapper" })
+        </div>
+@if (User.Identity.IsAuthenticated)
+{
+        using (Ajax.BeginForm("AddComment", "Home", new AjaxOptions { UpdateTargetId = "comments-wrapper" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+            
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.Hidden("ArticleId", Model.Id)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.EditorFor(m => m.CommentText, new { htmlAttributes = new { Placeholder = "Comment", @class = "form-control commnet-input" } })
+                        @Html.ValidationMessageFor(m => m.CommentText, "", new { @class = "text-danger" })
+                        <input type="submit" value="Add Comment" class="add-comment-btn" />
+                    </div>
+                </div>
+
+            </div>
+        }
+}
+
+        <div class="comments-wrapper" id="comments-wrapper"></div>
+     </div>
+

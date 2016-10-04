@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Blog.View.Models.CommentModel>
+    
+
+@foreach (var com in Model)
+{
+    <div class="article-comment-wrapper">
+        <div class="comment-meta clearfix">
+            <div class="cooment-author">@com.UserName</div>
+            <div class="comment-timecreation">@com.CommentCreationTime</div>
+        </div>
+        <div class="commnet-text">@com.CommentText</div>
+    </div>
+}
+

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Blog.View.Models.ArticleModel>
+
+@foreach (var art in Model)
+{
+    <div class="article-wrapper">
+        <div class="article-title-wrapper">
+            <h3 class="article-name">
+                @Ajax.ActionLink(art.Title,
+                        "GetArticle",
+                        new { id = art.Id },
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+            </h3>
+            <div class="article-meta">
+                <span class="posted-on">Posted on @art.ArticleCreationTime</span>
+                <span class="posted-by">Posted by @art.UserName</span>
+            </div>
+        </div>
+        <div class="article-shordesc">@art.ShortDescription</div>
+        <div class="article-meta">
+            <span class="meta-icon glyphicon glyphicon-th-list"></span>
+            @Ajax.ActionLink(art.CategoryName,
+                        "GetArticlesByCategory",
+                        new { id = art.CategoryId },
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+        </div>
+        </div>
+}

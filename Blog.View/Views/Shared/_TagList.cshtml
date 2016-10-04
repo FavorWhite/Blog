@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Blog.View.Models.TagModel>
+
+@foreach (var tag in Model)
+{
+    <li>
+        @Ajax.ActionLink(tag.Title,
+                        "GetArticlesByTag",
+                        new { id = tag.Id },
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+    </li>
+}

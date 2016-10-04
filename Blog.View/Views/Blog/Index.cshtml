@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Blog";
+}
+    <div class="row">
+        <aside class="col-md-4">
+            @using (Ajax.BeginForm("ArticleSearch", new AjaxOptions { UpdateTargetId = "articles-wrapper" }))
+            {
+                <div class="form-group"> 
+                    <input type="text" class="form-control  search-input" name="title" source='@Url.Action("AutoCompleteUserArticleSearch")' />
+                    <input type="submit" value="Search" class="search-btn" />
+                </div>
+            }
+            <div class="aside-category-wrapper">
+                <div class="aside-title">Categories</div>
+                <ul class="aside-list">
+                    <li>
+                        @Ajax.ActionLink("ALL*",
+                        "GetUserArticles",
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+                    </li>
+                        @Html.Action("GetUserCategories")
+                </ul>
+            </div>
+            <div class="aside-tag-wrapper">
+                <div class="aside-title">Tags</div>
+                <ul class="aside-list">
+                    <li>
+                        @Ajax.ActionLink("ALL*",
+                        "GetUserArticles",
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+                    </li>
+                    @Html.Action("GetUserTags")
+                </ul>
+            </div>
+        </aside>
+
+        <div class="col-md-8">
+            <div class="add-article-btn-wrapper">
+                @Html.ActionLink("+", "AddArticle")
+            </div>
+            <div id="articles-wrapper">
+                @Html.Action("GetUserArticles")
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+

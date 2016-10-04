@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Blog.View.Models.CategoryModel>
+
+
+@foreach (var cat in Model)
+{
+    <li>
+        @Ajax.ActionLink(cat.Title,
+                        "GetArticlesByCategory",
+                        new { id = cat.Id },
+                        new AjaxOptions { UpdateTargetId = "articles-wrapper" })
+    </li>
+}
